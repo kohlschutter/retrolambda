@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>net.orfjackal.retrolambda</groupId>
+        <groupId>com.kohlschutter.retrolambda</groupId>
         <artifactId>parent</artifactId>
         <version>2.5.8-SNAPSHOT</version>
         <relativePath>../parent/pom.xml</relativePath>
@@ -16,7 +16,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>net.orfjackal.retrolambda</groupId>
+            <groupId>com.kohlschutter.retrolambda</groupId>
             <artifactId>retrolambda-api</artifactId>
             <version>${project.version}</version>
         </dependency>

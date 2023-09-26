@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>net.orfjackal.retrolambda</groupId>
+        <groupId>com.kohlschutter.retrolambda</groupId>
         <artifactId>parent</artifactId>
         <version>2.5.8-SNAPSHOT</version>
         <relativePath>../parent/pom.xml</relativePath>
@@ -48,7 +48,7 @@
 
         <!-- See net.orfjackal.retrolambda.test.ClasspathTest#ignores_classes_in_explicit_classpath_that_are_under_the_java_package -->
         <dependency>
-            <groupId>net.orfjackal.retrolambda</groupId>
+            <groupId>com.kohlschutter.retrolambda</groupId>
             <artifactId>java-lang-dummies</artifactId>
             <version>1</version>
             <scope>system</scope>
@@ -109,7 +109,7 @@
 
             <!-- Process our byte codes to make them run on Java 7 -->
             <plugin>
-                <groupId>net.orfjackal.retrolambda</groupId>
+                <groupId>com.kohlschutter.retrolambda</groupId>
                 <artifactId>retrolambda-maven-plugin</artifactId>
                 <version>${project.version}</version>
                 <executions>
