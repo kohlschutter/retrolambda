@@ -318,7 +318,7 @@ abstract class ProcessClassesMojo extends AbstractMojo {
     private static String getRetrolambdaVersion() throws MojoExecutionException {
         try {
             InputStream is = ProcessClassesMojo.class.getResourceAsStream(
-                    "/META-INF/maven/net.orfjackal.retrolambda/retrolambda-maven-plugin/pom.properties");
+                    "/META-INF/maven/com.kohlschutter.retrolambda/retrolambda-maven-plugin/pom.properties");
             try {
                 Properties p = new Properties();
                 p.load(is);

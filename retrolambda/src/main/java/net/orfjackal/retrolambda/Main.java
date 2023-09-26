@@ -43,7 +43,7 @@ public class Main {
 
     private static String getVersion() {
         Properties p = new Properties();
-        try (InputStream in = Main.class.getResourceAsStream("/META-INF/maven/net.orfjackal.retrolambda/retrolambda/pom.properties")) {
+        try (InputStream in = Main.class.getResourceAsStream("/META-INF/maven/com.kohlschutter.retrolambda/retrolambda/pom.properties")) {
             if (in != null) {
                 p.load(in);
             }
