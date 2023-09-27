@@ -234,7 +234,7 @@ abstract class ProcessClassesMojo extends AbstractMojo {
                 goal("copy"),
                 configuration(element("artifactItems",
                         element("artifactItem",
-                                element(name("groupId"), "net.orfjackal.retrolambda"),
+                                element(name("groupId"), "com.kohlschutter.retrolambda"),
                                 element(name("artifactId"), "retrolambda"),
                                 element(name("version"), version),
                                 element(name("overWrite"), "true"),
