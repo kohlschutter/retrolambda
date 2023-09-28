@@ -246,7 +246,8 @@ abstract class ProcessClassesMojo extends AbstractMojo {
     String getJavaCommand() {
       String javaCommand = null;
 
-      List<Toolchain> tcCandidates = toolchainManager.getToolchains(session, "jdk", Collections
+      List<Toolchain> tcCandidates;
+      tcCandidates = toolchainManager.getToolchains(session, "jdk", Collections
           .singletonMap("version", "1.8"));
       for (Toolchain tc : tcCandidates) {
           String cmd = tc.findTool("java");
@@ -256,6 +257,20 @@ abstract class ProcessClassesMojo extends AbstractMojo {
               break;
           }
       }
+
+      if (javaCommand == null) {
+        tcCandidates = toolchainManager.getToolchains(session, "jdk", Collections.singletonMap(
+            "version", "8"));
+        for (Toolchain tc : tcCandidates) {
+          String cmd = tc.findTool("java");
+          if (cmd != null) {
+            getLog().info("Toolchain in retrolambda-maven-plugin: " + tc);
+            javaCommand = cmd;
+            break;
+          }
+        }
+      }
+
 
       Toolchain tc = toolchainManager.getToolchainFromBuildContext("jdk", session);
       if (javaCommand == null && tc != null) {
