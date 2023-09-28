@@ -187,7 +187,16 @@ abstract class ProcessClassesMojo extends AbstractMojo {
     private void processClassesInForkedProcess(Properties config) throws MojoExecutionException {
         String version = getRetrolambdaVersion();
         getLog().info("Retrieving Retrolambda " + version);
-        retrieveRetrolambdaJar(version);
+        try {
+          retrieveRetrolambdaJar(version);
+        } catch(MojoExecutionException e) {
+          if (e.getMessage().contains("has not been packaged yet")) {
+            getLog().info(e.getMessage());
+            return;
+          } else {
+            throw e;
+          }
+        }
 
         getLog().info("Processing classes with Retrolambda");
         String retrolambdaJar = getRetrolambdaJarPath();
